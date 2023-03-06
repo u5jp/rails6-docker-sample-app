@@ -13,7 +13,7 @@ RUN set -ex && \
     apt-get update -qq && \
     apt-get install -y --no-install-recommends sudo && \
     : "Install node.js" && \
-    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
+    curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - && \
     apt-get update -qq && \
     apt-get install -y --no-install-recommends nodejs && \
     : "Install yarn" && \
