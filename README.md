@@ -64,6 +64,6 @@ docker-compose up -d
 続いて以下のコマンドを実行してデータベースを作成してください。
 
 ```sh
-docker compose exec web bash
+docker-compose exec web bash
 rails db:create
 ```
