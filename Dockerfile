@@ -1,4 +1,4 @@
-FROM ruby:2.7.7
+FROM ruby:2.7.6
 
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
@@ -34,12 +34,12 @@ RUN set -ex && \
     : "Install rails6.X latest version" && \
     gem install rails --version="~>6.0.0"
 
-# COPY Gemfile /myapp
-# COPY Gemfile.lock /myapp
-# COPY package.json /myapp
-# COPY yarn.lock /myapp
+ COPY Gemfile /myapp
+ COPY Gemfile.lock /myapp
+ COPY package.json /myapp
+ COPY yarn.lock /myapp
 
-# RUN yarn install --check-files
+ RUN yarn install --check-files
 
-# RUN gem install bundler -v $BUNDLER_VERSION
-# RUN bundle _$BUNDLER_VERSION\_ install -j4
+ RUN gem install bundler -v $BUNDLER_VERSION
+ RUN bundle _$BUNDLER_VERSION\_ install -j4
