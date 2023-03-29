@@ -27,9 +27,9 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  # 渡されたトークンがダイジェストと一致したらtrueを返す
+  # トークンがダイジェストと一致したらtrueを返す
   def authenticated?(attribute, token)
-    digest = self.send("#{attribute}_digest")
+    digest = send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
   end
